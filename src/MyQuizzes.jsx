@@ -57,7 +57,7 @@ export default function MyQuizzes() {
   const handleResults = async (quizId) => {
     try {
       const response = await axios.get(
-        `http://localhost:8085/quiz-builder-backend-0.0.1-SNAPSHOT/api/quizzes/${quizId}/creator-results`
+        `http://localhost:8085/quiz-builder-backend/api/quizzes/${quizId}/creator-results`
       );
       setResults(response.data);
       setResultsQuiz(quizzes.find((q) => q.id === quizId));
