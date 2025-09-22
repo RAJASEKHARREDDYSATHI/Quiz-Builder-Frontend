@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 // then set base to '/frontend/'
 export default defineConfig({
   plugins: [react()],
- // base: '/frontend/',   // <-- add this
+  base: '/frontend/',   // <-- add this
 })
