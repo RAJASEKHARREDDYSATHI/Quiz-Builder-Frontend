@@ -1,0 +1,218 @@
+/* ---------------------- Global Reset ---------------------- */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* ------------------- First Page Background ------------------- */
+.first-page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* Animated Gradient Background */
+  background: linear-gradient(270deg, #ff9966, #ff5e62, #00c6ff, #0072ff);
+  background-size: 800% 800%;
+  animation: gradientBG 20s ease infinite;
+}
+
+/* ------------------- Header ------------------- */
+.header {
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255,255,255,0.9),
+               0 0 30px rgba(106,17,203,0.9),
+               0 0 45px rgba(37,117,252,0.9);
+}
+
+/* ------------------- Main Content ------------------- */
+.main-content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.tagline {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: zoomInOut 4s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7);
+}
+
+.subtext {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  animation: fadeZoom 6s ease-in-out infinite;
+}
+
+/* ------------------- Glow Button ------------------- */
+.glow-btn {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 14px 50px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(37,117,252,0.8), 
+              0 0 40px rgba(106,17,203,0.6);
+  animation: pulseGlow 2s infinite alternate;
+  transition: transform 0.2s ease-in-out;
+}
+
+.glow-btn:hover {
+  transform: scale(1.08);
+}
+
+/* ------------------- Animations ------------------- */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes zoomInOut {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeZoom {
+  0% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+  100% { opacity: 0.8; transform: scale(1); }
+}
+
+@keyframes pulseGlow {
+  from {
+    box-shadow: 0 0 15px rgba(37,117,252,0.6),
+                0 0 30px rgba(106,17,203,0.4);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(37,117,252,1),
+                0 0 50px rgba(106,17,203,0.8);
+  }
+}
+
+/* ------------------- Modal ------------------- */
+/* ------------------- Modal ------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5); /* slightly lighter overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: rgba(255, 255, 255, 0.1); /* subtle light color */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 20px;
+  padding: 3rem 2.5rem; /* more padding for breathing space */
+  width: 420px;
+  max-width: 95%;
+  color: white;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5),
+              0 0 30px rgba(106,17,203,0.5);
+  animation: slideUp 0.45s ease;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ------------------- Form Elements ------------------- */
+.modal-content input,
+.modal-content select {
+  padding: 14px 16px;        /* increased padding for spacing */
+  margin-bottom: 16px;       /* space between fields */
+  border: 2px solid rgba(0,0,0,0.2); 
+  border-radius: 12px;
+  outline: none;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.85); /* subtle color */
+  color: #000;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+  border-color: #2575fc; /* highlight on focus */
+  box-shadow: 0 0 8px rgba(37,117,252,0.5);
+}
+
+/* Submit Button */
+.submit-btn {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  color: white;
+  font-weight: bold;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* Toggle Text */
+.toggle-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.toggle-text span {
+  color:black;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.toggle-text .text-red {
+  color: red;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.toggle-text .text-red:hover {
+  color: darkred;
+}
+
+/* ------------------- Animations for Modal ------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
